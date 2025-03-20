@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Voice Assistant</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>AI Voice Assistant</h1>
+        </header>
+        
+        <div class="assistant-container">
+            <div class="assistant-avatar" id="avatar">
+                <!-- Avatar will change based on personality -->
+                <i class="fas fa-robot"></i>
+            </div>
+            
+            <div class="assistant-status">
+                <div id="status-indicator"></div>
+                <span id="status-text">Ready to help</span>
+            </div>
+        </div>
+
+        <div class="personality-selector">
+            <h2>Choose a Personality</h2>
+            <div class="personality-options">
+                <div class="personality-option" data-personality="banker">
+                    <i class="fas fa-landmark"></i>
+                    <span>Rude Banker</span>
+                </div>
+                <div class="personality-option" data-personality="bangalore">
+                    <i class="fas fa-code"></i>
+                    <span>Funny Bangalore Accent</span>
+                </div>
+                <div class="personality-option" data-personality="french">
+                    <i class="fas fa-heart"></i>
+                    <span>Romantic French</span>
+                </div>
+                <div class="personality-option" data-personality="default" id="default-personality">
+                    <i class="fas fa-smile"></i>
+                    <span>Default Assistant</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="conversation-container">
+            <div class="conversation" id="conversation">
+                <!-- Conversation history will appear here -->
+                <div class="message assistant">
+                    <div class="message-content">Hello! I'm your AI assistant. Choose a personality and start talking!</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="start-btn" class="control-btn">
+                <i class="fas fa-microphone"></i>
+                <span>Start Listening</span>
+            </button>
+            <button id="stop-btn" class="control-btn" disabled>
+                <i class="fas fa-stop"></i>
+                <span>Stop Listening</span>
+            </button>
+            
+            <div class="text-input-container">
+                <input type="text" id="text-input" placeholder="Or type your message here...">
+                <button id="send-btn">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Language detection library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/franc/5.0.0/franc.min.js"></script>
+    
+    <!-- Application Scripts -->
+    <script src="js/languageDetection.js"></script>
+    <script src="js/personalities.js"></script>
+    <script src="js/speechRecognition.js"></script>
+    <script src="js/speechSynthesis.js"></script>
+    <script src="js/main.js"></script>
+    <script src="config.js"></script>
+    <script src="translation-service.js"></script>
+</body>
+</html>
